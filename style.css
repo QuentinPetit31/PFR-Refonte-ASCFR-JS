@@ -11,7 +11,18 @@ body {
   margin: 0;
   background-color: rgba(183, 0, 0, 1);
   border-left: 10px solid rgba(2, 52, 116, 1);
-  border-right: 10px solid rgba(2, 52, 116, 1);
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  background-color: rgba(183, 0, 0, 1);
+  height: calc(100%);
+  z-index: 1;
 }
 .header {
   display: flex;
@@ -21,6 +32,14 @@ body {
   background-color: white;
   position: relative;
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
+
+  margin-top: linear-gradient(
+    to right,
+    rgba(2, 52, 116, 1) 40%,
+    white 30%,
+    white 60%,
+    rgba(183, 0, 0, 1) 60%
+  );
 }
 
 .header-content {
@@ -32,6 +51,22 @@ body {
 .header-logo img {
   width: 15vw;
   height: auto;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(
+    to right,
+    rgba(2, 52, 116, 1) 40%,
+    white 30%,
+    white 60%,
+    rgba(183, 0, 0, 1) 60%
+  );
 }
 
 .custom-link-red {
@@ -105,7 +140,7 @@ p {
 .footer-icons img {
   width: 50px;
   height: 50px;
-  margin-left: -15%;
+  margin-left: -10%;
 }
 
 .img-top-footer {
@@ -116,6 +151,63 @@ p {
   margin-bottom: -2vw;
   margin-left: 15%;
 }
+
+h2{
+  font-family: caprasimo;
+  color: rgb(255, 255, 255);
+    font-size: xx-large;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: normal;
+  }
+
+  #matches-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #matches-list li {
+    list-style: none;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  #matches-list img {
+    border-radius: 50%;
+  }
+
+  #players-container {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .player-card {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .player-card h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+  }
+  
+  
+
 
 /* fin Commun ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -138,9 +230,80 @@ p {
 
   .header-logo img {
     width: 25%;
-    margin-left: 37%;
+    margin-left: 38%;
     margin-top: 5%;
     margin-bottom: 5%;
     height: auto;
   }
+
+  /* .carousel {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 25px; 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    background-color: rgba(255, 255, 255, 0.8); /
+  }
+
+  .carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Transition fluide */
+}
+
+.carousel-slide {
+    min-width: 150px; 
+    margin: 0 15px;
+    border-radius: 20px; 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+.carousel-slide:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
+  }
+
+Boutons de navigation
+ .carousel-button { 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  } 
+
+ .carousel-button:hover {
+    background: rgba(2, 52, 116, 1); 
+    transform: scale(1.2); 
+  }
+
+  .carousel-button.left {
+    left: 15px;
+  }
+
+  .carousel-button.right {
+    right: 15px;
+  } */
 }
