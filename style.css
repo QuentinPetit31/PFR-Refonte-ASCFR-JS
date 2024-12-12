@@ -152,62 +152,58 @@ p {
   margin-left: 15%;
 }
 
-h2{
+h2 {
   font-family: caprasimo;
   color: rgb(255, 255, 255);
-    font-size: xx-large;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-weight: normal;
-  }
+  font-size: xx-large;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: lighter;
+  margin-top: -1vw;
+}
 
-  #matches-container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-  }
-  
-  #matches-list li {
-    list-style: none;
-    margin: 15px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  #matches-list img {
-    border-radius: 50%;
-  }
+#prochain-match {
+  font-family: caprasimo, sans-serif; /* Police personnalisée */
+  color: #fff; /* Couleur du texte */
+  font-size: 1.2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px; /* Espacement entre les éléments */
+}
 
-  #players-container {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .player-card {
-    margin-bottom: 1rem;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-  }
-  
-  .player-card h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #333;
-  }
-  
-  
+#prochain-match img {
+  width: 80px; /* Taille des logos */
+  height: auto;
+}
 
+#prochain-match .match-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px; /* Espacement sous le titre */
+}
+
+#prochain-match .league-info {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+#prochain-match .location {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+#prochain-match .calendrier-link {
+  font-size: 0.9rem;
+  color: #fff;
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 /* fin Commun ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -257,10 +253,10 @@ h2{
 
   .carousel-track {
     display: flex;
-    transition: transform 0.5s ease-in-out; /* Transition fluide */
+    transition: transform 0.5s ease-in-out; 
 }
 
-.carousel-slide {
+ .carousel-slide {
     min-width: 150px; 
     margin: 0 15px;
     border-radius: 20px; 
@@ -305,5 +301,9 @@ Boutons de navigation
 
   .carousel-button.right {
     right: 15px;
+  }  */
+
+  /* .fetch{
+    
   } */
 }
