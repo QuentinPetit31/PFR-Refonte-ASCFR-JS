@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: auto;
+  font-weight: lighter;
 }
 
 /* Commun ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
@@ -49,7 +50,7 @@ body::after {
   gap: 2vw;
 }
 .header-logo img {
-  width: 15vw;
+  width: 20vw;
   height: auto;
 }
 
@@ -62,16 +63,33 @@ body::after {
   height: 10px;
   background: linear-gradient(
     to right,
-    rgba(2, 52, 116, 1) 40%,
-    white 30%,
-    white 60%,
-    rgba(183, 0, 0, 1) 60%
+    rgba(2, 52, 116, 1) 30%,
+    transparent 30%,
+    transparent 70%,
+    rgba(183, 0, 0, 1) 70%
   );
 }
 
-.custom-link-red {
+.header-image img,
+.menu-icon {
+  width: 25%;
+  height: auto;
+}
+
+.custom-link-rouge {
   font-family: caprasimo;
   color: rgba(183, 0, 0, 1);
+  font-size: large;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.custom-link-blanc {
+  font-family: caprasimo;
+  color: rgb(255, 255, 255);
   font-size: large;
   text-decoration: none;
   display: flex;
@@ -87,12 +105,6 @@ p,
   font-size: large;
   text-decoration: none;
   margin-top: 10vw;
-}
-
-.header-image img,
-.menu-icon {
-  width: 25%;
-  height: auto;
 }
 
 .footer {
@@ -115,10 +127,10 @@ p,
   height: 10px;
   background: linear-gradient(
     to right,
-    rgba(2, 52, 116, 1) 40%,
-    white 30%,
-    white 60%,
-    rgba(183, 0, 0, 1) 60%
+    rgba(2, 52, 116, 1) 30%,
+    transparent 30%,
+    transparent 70%,
+    rgba(183, 0, 0, 1) 70%
   );
 }
 
@@ -161,59 +173,55 @@ h2 {
   flex-direction: column;
   align-items: center;
   font-weight: lighter;
-  margin-top: -1vw;
+  margin-top: 5vw;
 }
 
 #prochain-match {
-  font-family: caprasimo, sans-serif; /* Police personnalisée */
-  color: #fff; /* Couleur du texte */
-  font-size: 1.2rem;
+  font-family: caprasimo, sans-serif;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 4vw;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  gap: 10px; /* Espacement entre les éléments */
+  padding: 4vw;
 }
 
 #prochain-match img {
-  width: 80px; /* Taille des logos */
+  width: 18vw;
   height: auto;
+  display: inline-block;
+  vertical-align: middle;
+  justify-content: center;
+  gap: 20px;
+}
+
+#prochain-match .league-logo {
+  width: 20vw;
+  height: auto;
+  margin: -5vw;
 }
 
 #prochain-match .match-header {
+  +-moz-animation: 00 *;
   font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px; /* Espacement sous le titre */
+  margin-bottom: 10px;
 }
 
-#prochain-match .league-info {
-  font-size: 1rem;
-  margin: 5px 0;
-}
-
-#prochain-match .location {
-  font-size: 1rem;
-  margin: 5px 0;
-}
-
-#prochain-match .calendrier-link {
-  font-size: 0.9rem;
-  color: #fff;
-  text-decoration: underline;
-  cursor: pointer;
+#calendrier-link {
+  font-family: caprasimo;
+  color: rgba(2, 52, 116, 1);
+  font-size: large;
+  text-decoration: none;
+  margin-top: 10vw;
 }
 
 /* fin Commun ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
 /* Mobile ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media (max-width: 740px) {
-  .footer-icons img {
-    width: 50px;
-    height: 50px;
-  }
-
   .header {
     display: flex;
     align-items: center;
@@ -225,11 +233,15 @@ h2 {
   }
 
   .header-logo img {
-    width: 25%;
-    margin-left: 38%;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    width: 30%;
+    margin-left: 36%;
     height: auto;
+    margin-bottom: 5%;
+  }
+
+  .footer-icons img {
+    width: 50px;
+    height: 50px;
   }
 
   /* .carousel {

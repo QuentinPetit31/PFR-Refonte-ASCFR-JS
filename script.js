@@ -41,19 +41,28 @@ fetch(url, {
     // Vérifie s'il y a des matchs disponibles
     if (data.response.length > 0) {
       const match = data.response[0];
+      const matchDate = new Date(match.fixture.date);
+
+      // Formatte la date (jour/mois/année)
+      const formattedDate = matchDate.toLocaleDateString("fr-FR");
+
+      // Formatte l'heure (heures:minutes)
+      const formattedTime = matchDate.toLocaleTimeString("fr-FR", {
+        hour: "2-digit",
+        minute: "2-digit",
+      });
+
       const matchInfo = `
-
-    <img src="${match.teams.home.logo}" alt="${
-        match.teams.home.name
-      }" width="50">   vs
-    <img src="${match.teams.away.logo}" alt="${
-        match.teams.away.name
-      }" width="50">
-
-    ${match.teams.home.name} vs ${match.teams.away.name} <br>
-    ${new Date(match.fixture.date).toLocaleString()}<br>
-
-  `;
+        <div class="match-header">Match à venir</div>
+        <div class="match-teams">
+          <img src="${match.teams.home.logo}" alt="${match.teams.home.name}" width="10vw"> 
+          <span>vs</span>
+          <img src="${match.teams.away.logo}" alt="${match.teams.away.name}" width="10vw">
+        </div>
+        ${formattedDate} ${formattedTime}<br>
+        ${match.fixture.venue.name}, ${match.fixture.venue.city}<br>
+        ${match.league.name}
+      `;
       document.getElementById("prochain-match").innerHTML = matchInfo;
     } else {
       document.getElementById("prochain-match").innerText =
