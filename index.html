@@ -6,6 +6,8 @@
     <link rel="icon" type="image/x-icon" href="/assets/ars.ico" />
     <link href="style.css" type="text/css" rel="stylesheet" />
     <script type="module" src="script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
 
     <title>ASCFR</title>
   </head>
@@ -45,26 +47,95 @@
 
     <a href="#" class="custom-link-blanc">voir calendrier</a>
 
-    <!-- <div class="carousel">
-      <button class="carousel-button left">&lt;</button>
-      <div class="carousel-track-container">
-        <ul class="carousel-track">
-          <li class="carousel-slide">
-            <img src="assets/1.webp" alt="Club 1" />
-          </li>
-          <li class="carousel-slide">
-            <img src="assets/2.webp" alt="Club 2" />
-          </li>
-          <li class="carousel-slide">
-            <img src="club3.jpg" alt="Club 3" />
-          </li>
-          <li class="carousel-slide">
-            <img src="club4.jpg" alt="Club 4" />
-          </li>
-        </ul>
+    <h2>Actualités</h2>
+    <h3>Tirage au sort de la Ligue des Champions</h3>
+
+    <!-- ////////////////////////////////////////////////////////////// -->
+
+    <div
+      id="carouselExample"
+      class="relative w-full max-w-4xl"
+      data-carousel="static"
+    >
+      <!-- Carousel -->
+      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img
+            src="/assets/1.jpg"
+            class="absolute block w-full h-full object-cover"
+            alt="Slide 1"
+          />
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img
+            src="/assets/2.webp"
+            class="absolute block w-full h-full object-cover"
+            alt="Slide 2"
+          />
+        </div>
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img
+            src="/assets/1.webp"
+            class="absolute block w-full h-full object-cover"
+            alt="Slide 3"
+          />
+        </div>
       </div>
-      <button class="carousel-button right">&gt;</button>
-    </div> -->
+      <!-- Slider controls -->
+      <button
+        type="button"
+        class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/50 group-hover:bg-black/70 group-focus:ring-4 group-focus:ring-black"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 19l-7-7 7-7"
+            ></path>
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button
+        type="button"
+        class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next
+      >
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/50 group-hover:bg-black/70 group-focus:ring-4 group-focus:ring-black"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 5l7 7-7 7"
+            ></path>
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////// -->
 
     <div class="img-top-footer">
       <a target="_blank" aria-label="Vicoria Concordia Crescit">
@@ -76,6 +147,8 @@
         />
       </a>
     </div>
+
+    <!-- ////////////////////////////////////////////////////////////// -->
 
     <footer class="footer">
       <div class="footer-text">

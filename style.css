@@ -90,7 +90,7 @@ body::after {
 .custom-link-blanc {
   font-family: caprasimo;
   color: rgb(255, 255, 255);
-  font-size: large;
+  font-size: medium;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -167,7 +167,19 @@ p {
 h2 {
   font-family: caprasimo;
   color: rgb(255, 255, 255);
-  font-size: xx-large;
+  font-size:xx-large !important;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: lighter;
+  margin-top: 5vw;
+}
+
+h3 {
+  font-family: caprasimo;
+  color: rgb(255, 255, 255);
+  font-size: medium;
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -179,8 +191,7 @@ h2 {
 #prochain-match {
   font-family: caprasimo, sans-serif;
   color: #fff;
-  font-weight: lighter;
-  font-size: 4vw;
+  font-size: medium;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -205,7 +216,8 @@ h2 {
 }
 
 #prochain-match .match-header {
-  +-moz-animation: 00 *;
+  -moz-animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
   font-size: 2rem;
   margin-bottom: 10px;
 }
@@ -217,6 +229,8 @@ h2 {
   text-decoration: none;
   margin-top: 10vw;
 }
+
+
 
 /* fin Commun ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -244,7 +258,7 @@ h2 {
     height: 50px;
   }
 
-  /* .carousel {
+  .carousel {
     position: relative;
     display: flex;
     align-items: center;
@@ -254,7 +268,7 @@ h2 {
     margin: 20px auto;
     overflow: hidden;
     border-radius: 25px; 
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
     background-color: rgba(255, 255, 255, 0.8); /
   }
 
@@ -315,7 +329,8 @@ Boutons de navigation
     right: 15px;
   }  */
 
+
   /* .fetch{
     
-  } */
+  }
 }
