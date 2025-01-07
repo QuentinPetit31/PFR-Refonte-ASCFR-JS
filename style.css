@@ -33,7 +33,6 @@ body::after {
   background-color: white;
   position: relative;
   clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%);
-
   margin-top: linear-gradient(
     to right,
     rgba(2, 52, 116, 1) 40%,
@@ -49,6 +48,7 @@ body::after {
   align-items: center;
   gap: 2vw;
 }
+
 .header-logo img {
   width: 20vw;
   height: auto;
@@ -84,18 +84,18 @@ body::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
 }
 
 .custom-link-blanc {
   font-family: caprasimo;
   color: rgb(255, 255, 255);
-  font-size: medium;
+  font-size: large !important;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  margin-bottom: 5vw;
 }
 
 p,
@@ -152,7 +152,6 @@ p {
 .footer-icons img {
   width: 50px;
   height: 50px;
-  margin-left: -10%;
 }
 
 .img-top-footer {
@@ -167,13 +166,13 @@ p {
 h2 {
   font-family: caprasimo;
   color: rgb(255, 255, 255);
-  font-size:xx-large !important;
+  font-size: x-large !important;
   text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: lighter;
-  margin-top: 5vw;
+  margin-top: 3vw;
 }
 
 h3 {
@@ -197,16 +196,15 @@ h3 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4vw;
 }
 
 #prochain-match img {
-  width: 18vw;
+  width: 20vw;
   height: auto;
   display: inline-block;
   vertical-align: middle;
   justify-content: center;
-  gap: 20px;
+  margin-inline: 5vw;
 }
 
 #prochain-match .league-logo {
@@ -218,19 +216,100 @@ h3 {
 #prochain-match .match-header {
   -moz-animation: fadeIn 2s ease-in-out;
   animation: fadeIn 2s ease-in-out;
-  font-size: 2rem;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 1;
+  margin-bottom: 15px;
 }
 
 #calendrier-link {
   font-family: caprasimo;
   color: rgba(2, 52, 116, 1);
-  font-size: large;
+  font-size: 1rem;
   text-decoration: none;
   margin-top: 10vw;
 }
 
+.img-arrondie {
+  border-radius: 9999px;
+  margin-left: 5vw;
+  margin-right: 5vw;
+}
 
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #bd1616;
+  color: bd1616;
+  display: none;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+/* Rendre le menu visible */
+#menu.visible {
+  display: block;
+}
+
+/* Styles pour le contenu du menu */
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.menu-header .menu-logo {
+  height: 25vw;
+}
+
+.menu-content ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-family: caprasimo;
+  color: rgb(255, 255, 255);
+  font-size: large !important;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-content ul li {
+  margin: 1rem 0;
+}
+
+.menu-content ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.menu-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.menu-footer img {
+  height: 30px;
+}
+
+.hidden-content #main-content {
+  display: none;
+}
+
+.hidden-content footer {
+  display: block;
+}
+
+.hidden-content header {
+  display: block;
+}
 
 /* fin Commun ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 
@@ -256,81 +335,5 @@ h3 {
   .footer-icons img {
     width: 50px;
     height: 50px;
-  }
-
-  .carousel {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
-    overflow: hidden;
-    border-radius: 25px; 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
-    background-color: rgba(255, 255, 255, 0.8); /
-  }
-
-  .carousel-track-container {
-    overflow: hidden;
-    width: 100%;
-  }
-
-  .carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out; 
-}
-
- .carousel-slide {
-    min-width: 150px; 
-    margin: 0 15px;
-    border-radius: 20px; 
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-.carousel-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-.carousel-slide:hover {
-    transform: scale(1.1); 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-  }
-
-Boutons de navigation
- .carousel-button { 
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.7);
-    border: none;
-    color: white;
-    font-size: 2rem;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  } 
-
- .carousel-button:hover {
-    background: rgba(2, 52, 116, 1); 
-    transform: scale(1.2); 
-  }
-
-  .carousel-button.left {
-    left: 15px;
-  }
-
-  .carousel-button.right {
-    right: 15px;
-  }  */
-
-
-  /* .fetch{
-    
   }
 }

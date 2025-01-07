@@ -1,24 +1,3 @@
-// const track = document.querySelector(".carousel-track");
-// const slides = Array.from(track.children);
-// const prevButton = document.querySelector(".carousel-button.left");
-// const nextButton = document.querySelector(".carousel-button.right");
-
-// let currentSlideIndex = 0;
-
-// nextButton.addEventListener("click", () => {
-//   currentSlideIndex = (currentSlideIndex + 1) % slides.length;
-//   const amountToMove = slides[currentSlideIndex].offsetLeft;
-//   track.style.transform = `translateX(-${amountToMove}px)`;
-// });
-
-// prevButton.addEventListener("click", () => {
-//   currentSlideIndex = (currentSlideIndex - 1 + slides.length) % slides.length;
-//   const amountToMove = slides[currentSlideIndex].offsetLeft;
-//   track.style.transform = `translateX(-${amountToMove}px)`;
-// });
-
-/////////////////////////////////////////////////////////////////////////////
-
 const apiKey = "eb07dfa7f9525afbfb394e2a542680f4";
 const teamId = "42";
 const leagueId = "39";
@@ -70,3 +49,79 @@ fetch(url, {
     }
   })
   .catch((error) => console.error("Erreur:", error));
+
+/////////////////////////////////////////////////////////////////////////////
+
+// Fonction pour changer le titre du h3
+function updateTitle() {
+  const carouselItems = document.querySelectorAll("[data-carousel-item]");
+  const activeItem = Array.from(carouselItems).find(
+    (item) => !item.classList.contains("hidden")
+  );
+
+  const title = document.getElementById("carousel-title");
+
+  if (activeItem) {
+    if (
+      activeItem.querySelector("img").alt ===
+      "Collection Adidas Arsenal - France"
+    ) {
+      title.textContent = "Collection Adidas Arsenal - France";
+    } else if (
+      activeItem.querySelector("img").alt === "Adversaires Ligue des Champions"
+    ) {
+      title.textContent = "Adversaires Ligue des Champions";
+    }
+  }
+}
+
+// Écoute les événements de changement de l'image du carousel
+const carouselPrevButton = document.querySelector("[data-carousel-prev]");
+const carouselNextButton = document.querySelector("[data-carousel-next]");
+
+// Met à jour le titre au démarrage
+updateTitle();
+
+// Ajoute des écouteurs d'événements sur les boutons de navigation du carousel
+carouselPrevButton.addEventListener("click", updateTitle);
+carouselNextButton.addEventListener("click", updateTitle);
+
+/////////////////////////////////////////////////////////////////////////////
+
+fetch("menu.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("menu-container").innerHTML = data;
+    // Ajoutez les scripts nécessaires après le chargement
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuClose = document.getElementById("menu-close");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.add("visible");
+    });
+
+    menuClose.addEventListener("click", () => {
+      mobileMenu.classList.remove("visible");
+    });
+  });
+
+/////////////////////////////////////////////////////////////////////////////
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuLink = document.getElementById("menu-link");
+  const closeButton = document.getElementById("close-button");
+  const menu = document.getElementById("menu");
+  const body = document.body;
+
+  menuLink.addEventListener("click", (e) => {
+    e.preventDefault();
+    menu.classList.add("visible"); // Afficher le menu
+    body.classList.add("hidden-content"); // Masquer le contenu sauf le header et le footer
+  });
+
+  closeButton.addEventListener("click", () => {
+    menu.classList.remove("visible");
+    body.classList.remove("hidden-content"); // Réafficher le contenu
+  });
+});

@@ -13,20 +13,50 @@
   </head>
 
   <body>
+
     <header class="header">
       <div class="header-content">
         <div class="header-logo img">
           <img src="assets/logo.jpg" alt="Arsenal Supporter Club France" />
         </div>
-
-        <a href="#" class="custom-link-rouge">
+        <a href="#" class="custom-link-rouge" id="menu-link">
           Menu
           <img src="assets/Menu.jpg" alt="Menu Icon" class="menu-icon" />
         </a>
+      </header>
+      
       </div>
+      
     </header>
 
-    <br />
+    <div id="menu" class="hidden">
+      <div class="menu-header">
+        <img src="assets/logo.jpg" alt="Logo" class="menu-logo">
+        <button id="close-button">Fermer Menu</button>
+      </div>
+      <nav class="menu-content">
+        <ul>
+          <li><a href="#">Me connecter</a></li>
+          <li><a href="#">Réservation</a></li>
+          <li><a href="#">Actualité</a></li>
+          <li><a href="#">Boutique</a></li>
+          <li><a href="#">Multimédia</a></li>
+          <li><a href="#">Histoire du club</a></li>
+          <li><a href="#">Qui sommes-nous ?</a></li>
+          <li><a href="#">Information</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Nous contacter</a></li>
+        </ul>
+      </nav>
+      <footer class="menu-footer">
+        <a href="#"><img src="x-logo.png" alt="X"></a>
+        <a href="#"><img src="facebook-logo.png" alt="Facebook"></a>
+        <a href="#"><img src="instagram-logo.png" alt="Instagram"></a>
+      </footer>
+    </div>
+  
+  </div>
+
 
     <!-- <div id="prochain-match">Chargement du prochain match...</div> -->
     <div id="prochain-match">
@@ -48,36 +78,27 @@
     <a href="#" class="custom-link-blanc">voir calendrier</a>
 
     <h2>Actualités</h2>
-    <h3>Tirage au sort de la Ligue des Champions</h3>
+    <h3 id="carousel-title">Tirage au sort de la Ligue des Champions</h3>
 
     <!-- ////////////////////////////////////////////////////////////// -->
+      
+    <!-- Carousel -->
 
-    <div
-      id="carouselExample"
-      class="relative w-full max-w-4xl"
-      data-carousel="static"
-    >
-      <!-- Carousel -->
+    <div id="carousel" class="relative w-11/12 max-w-4xl ml-4 mr-4 justify-center rounded-full" data-carousel="static">
       <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
-          <img
-            src="/assets/1.jpg"
-            class="absolute block w-full h-full object-cover"
-            alt="Slide 1"
-          />
-        </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+
+        <div class="hidden duration-700 ease-in-out rounded-full" data-carousel-item>
           <img
             src="/assets/2.webp"
             class="absolute block w-full h-full object-cover"
-            alt="Slide 2"
+            alt="Collection Adidas Arsenal - France"
           />
         </div>
-        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+        <div class="hidden duration-700 ease-in-out rounded-full" data-carousel-item>
           <img
             src="/assets/1.webp"
             class="absolute block w-full h-full object-cover"
-            alt="Slide 3"
+            alt="Adversaires Ligue des Champions"
           />
         </div>
       </div>
@@ -88,24 +109,17 @@
         data-carousel-prev
       >
         <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/50 group-hover:bg-black/70 group-focus:ring-4 group-focus:ring-black"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-50/50 group-hover:bg-red-600/70 group-focus:ring-4 group-focus:ring-white"
         >
-          <svg
-            aria-hidden="true"
-            class="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <img src="/assets/left arrow.png" alt="Previous" class="w-6 h-6" />
+
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="M15 19l-7-7 7-7"
             ></path>
           </svg>
-          <span class="sr-only">Previous</span>
+          <span class="sr-only">Précédent</span>
         </span>
       </button>
       <button
@@ -114,28 +128,29 @@
         data-carousel-next
       >
         <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/50 group-hover:bg-black/70 group-focus:ring-4 group-focus:ring-black"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-50/50 group-hover:bg-red-600/70 group-focus:ring-4 group-focus:ring-white"
         >
-          <svg
-            aria-hidden="true"
-            class="w-6 h-6 text-white"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <img src="/assets/right arrow.png" alt="Previous" class="w-6 h-6" />
+
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
               d="M9 5l7 7-7 7"
             ></path>
           </svg>
-          <span class="sr-only">Next</span>
+          <span class="sr-only">Suivant</span>
         </span>
       </button>
     </div>
     <!-- ////////////////////////////////////////////////////////////// -->
+<h2>Reservation 2024/25</h2>
+
+<img class="img-arrondie" src="assets/Emirates_Stadium.JPG" />
+
+<h2>Inscription 2024/25</h2>
+
+<a href="#" class="custom-link-blanc">Rejoins l'équipe ici</a>
+
 
     <div class="img-top-footer">
       <a target="_blank" aria-label="Vicoria Concordia Crescit">
@@ -147,6 +162,8 @@
         />
       </a>
     </div>
+
+    
 
     <!-- ////////////////////////////////////////////////////////////// -->
 
