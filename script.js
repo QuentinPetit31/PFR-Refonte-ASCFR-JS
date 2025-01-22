@@ -88,40 +88,72 @@ carouselNextButton.addEventListener("click", updateTitle);
 
 /////////////////////////////////////////////////////////////////////////////
 
-fetch("menu.html")
-  .then((response) => response.text())
-  .then((data) => {
-    document.getElementById("menu-container").innerHTML = data;
-    // Ajoutez les scripts nécessaires après le chargement
-    const menuToggle = document.getElementById("menu-toggle");
-    const menuClose = document.getElementById("menu-close");
-    const mobileMenu = document.getElementById("mobile-menu");
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    // Charge tous les composants
+    await Promise.all([
+      loadComponent("header", "partials/header.html"),
+      loadComponent("#menu", "partials/menu.html"),
+      loadComponent("footer", "partials/footer.html"),
+    ]);
 
-    menuToggle.addEventListener("click", () => {
-      mobileMenu.classList.add("visible");
-    });
-
-    menuClose.addEventListener("click", () => {
-      mobileMenu.classList.remove("visible");
-    });
-  });
-
-/////////////////////////////////////////////////////////////////////////////
-
-document.addEventListener("DOMContentLoaded", () => {
-  const menuLink = document.getElementById("menu-link");
-  const closeButton = document.getElementById("close-button");
-  const menu = document.getElementById("menu");
-  const body = document.body;
-
-  menuLink.addEventListener("click", (e) => {
-    e.preventDefault();
-    menu.classList.add("visible"); // Afficher le menu
-    body.classList.add("hidden-content"); // Masquer le contenu sauf le header et le footer
-  });
-
-  closeButton.addEventListener("click", () => {
-    menu.classList.remove("visible");
-    body.classList.remove("hidden-content"); // Réafficher le contenu
-  });
+    initializeMenu();
+  } catch (error) {
+    console.error("Erreur lors du chargement des composants:", error);
+  }
 });
+
+function initializeMenu() {
+  const menuButton = document.querySelector("#menu-button");
+  const menu = document.querySelector("#menu");
+
+  if (menuButton && menu) {
+    menuButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      menu.classList.toggle("hidden");
+      console.log("Menu toggled");
+    });
+  }
+}
+
+async function loadComponent(selector, path) {
+  try {
+    const response = await fetch(path);
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+    const content = await response.text();
+
+    const element = document.querySelector(selector);
+    if (element) {
+      element.innerHTML = content;
+      console.log(`Composant ${path} chargé avec succès`);
+    }
+  } catch (error) {
+    console.error(`Erreur de chargement du composant ${path}:`, error);
+  }
+}
+
+function initializeMenu() {
+  const menuButton = document.querySelector("#menu-button");
+  const menu = document.querySelector("#menu");
+
+  if (menuButton && menu) {
+    menuButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      console.log("Menu cliqué");
+
+      // Vérifie si le menu est actuellement caché
+      const isHidden = menu.classList.contains("hidden");
+
+      // Toggle la classe et le style
+      menu.classList.toggle("hidden");
+      menu.style.display = isHidden ? "flex" : "none";
+
+      console.log("État du menu:", isHidden ? "affiché" : "caché");
+    });
+  } else {
+    console.log("Éléments manquants:", {
+      menuButton: !!menuButton,
+      menu: !!menu,
+    });
+  }
+}

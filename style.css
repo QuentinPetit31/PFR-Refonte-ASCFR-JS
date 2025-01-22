@@ -25,6 +25,7 @@ body::after {
   height: calc(100%);
   z-index: 1;
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -248,12 +249,10 @@ h3 {
   overflow-y: auto;
 }
 
-/* Rendre le menu visible */
 #menu.visible {
   display: block;
 }
 
-/* Styles pour le contenu du menu */
 .menu-header {
   display: flex;
   justify-content: space-between;
@@ -266,6 +265,19 @@ h3 {
 }
 
 .menu-content ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  font-family: caprasimo;
+  color: rgb(255, 255, 255);
+  font-size: large !important;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#close-button {
   list-style: none;
   padding: 0;
   text-align: center;
@@ -309,6 +321,10 @@ h3 {
 
 .hidden-content header {
   display: block;
+}
+
+.hidden {
+  display: none !important;
 }
 
 /* fin Commun ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */

@@ -8,57 +8,19 @@
     <script type="module" src="script.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@1.6.5/dist/flowbite.min.js"></script>
-
     <title>ASCFR</title>
   </head>
-
   <body>
 
-    <header class="header">
-      <div class="header-content">
-        <div class="header-logo img">
-          <img src="assets/logo.jpg" alt="Arsenal Supporter Club France" />
-        </div>
-        <a href="#" class="custom-link-rouge" id="menu-link">
-          Menu
-          <img src="assets/Menu.jpg" alt="Menu Icon" class="menu-icon" />
-        </a>
-      </header>
-      
-      </div>
-      
-    </header>
+  <body>
+    <!-- Header -->
+    <header class="header"><div class="menu-button"></div></header>
 
-    <div id="menu" class="hidden">
-      <div class="menu-header">
-        <img src="assets/logo.jpg" alt="Logo" class="menu-logo">
-        <button id="close-button">Fermer Menu</button>
-      </div>
-      <nav class="menu-content">
-        <ul>
-          <li><a href="#">Me connecter</a></li>
-          <li><a href="#">Réservation</a></li>
-          <li><a href="#">Actualité</a></li>
-          <li><a href="#">Boutique</a></li>
-          <li><a href="#">Multimédia</a></li>
-          <li><a href="#">Histoire du club</a></li>
-          <li><a href="#">Qui sommes-nous ?</a></li>
-          <li><a href="#">Information</a></li>
-          <li><a href="#">Forum</a></li>
-          <li><a href="#">Nous contacter</a></li>
-        </ul>
-      </nav>
-      <footer class="menu-footer">
-        <a href="#"><img src="x-logo.png" alt="X"></a>
-        <a href="#"><img src="facebook-logo.png" alt="Facebook"></a>
-        <a href="#"><img src="instagram-logo.png" alt="Instagram"></a>
-      </footer>
-    </div>
-  
-  </div>
+    <!-- Menu -->
+    <div id="menu" class="hidden"></div>
 
 
-    <!-- <div id="prochain-match">Chargement du prochain match...</div> -->
+    <!-- Prochain match -->
     <div id="prochain-match">
       <div class="match-teams">
         <img
@@ -77,26 +39,33 @@
 
     <a href="#" class="custom-link-blanc">voir calendrier</a>
 
+    <!-- Actualités -->
     <h2>Actualités</h2>
     <h3 id="carousel-title">Tirage au sort de la Ligue des Champions</h3>
 
-    <!-- ////////////////////////////////////////////////////////////// -->
-      
     <!-- Carousel -->
-
-    <div id="carousel" class="relative w-11/12 max-w-4xl ml-4 mr-4 justify-center rounded-full" data-carousel="static">
+    <div
+      id="carousel"
+      class="relative w-11/12 max-w-4xl ml-4 mr-4 justify-center rounded-full"
+      data-carousel="static"
+    >
       <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
-
-        <div class="hidden duration-700 ease-in-out rounded-full" data-carousel-item>
+        <div
+          class="hidden duration-700 ease-in-out rounded-full"
+          data-carousel-item
+        >
           <img
-            src="/assets/2.webp"
+            src="/assets/1.webp"
             class="absolute block w-full h-full object-cover"
             alt="Collection Adidas Arsenal - France"
           />
         </div>
-        <div class="hidden duration-700 ease-in-out rounded-full" data-carousel-item>
+        <div
+          class="hidden duration-700 ease-in-out rounded-full"
+          data-carousel-item
+        >
           <img
-            src="/assets/1.webp"
+            src="/assets/2.webp"
             class="absolute block w-full h-full object-cover"
             alt="Adversaires Ligue des Champions"
           />
@@ -112,13 +81,6 @@
           class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-50/50 group-hover:bg-red-600/70 group-focus:ring-4 group-focus:ring-white"
         >
           <img src="/assets/left arrow.png" alt="Previous" class="w-6 h-6" />
-
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15 19l-7-7 7-7"
-            ></path>
-          </svg>
           <span class="sr-only">Précédent</span>
         </span>
       </button>
@@ -130,27 +92,19 @@
         <span
           class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-gray-50/50 group-hover:bg-red-600/70 group-focus:ring-4 group-focus:ring-white"
         >
-          <img src="/assets/right arrow.png" alt="Previous" class="w-6 h-6" />
-
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M9 5l7 7-7 7"
-            ></path>
-          </svg>
+          <img src="/assets/right arrow.png" alt="Next" class="w-6 h-6" />
           <span class="sr-only">Suivant</span>
         </span>
       </button>
     </div>
-    <!-- ////////////////////////////////////////////////////////////// -->
-<h2>Reservation 2024/25</h2>
 
-<img class="img-arrondie" src="assets/Emirates_Stadium.JPG" />
+    <!-- Réservation -->
+    <h2>Reservation 2024/25</h2>
+    <img class="img-arrondie" src="assets/Emirates_Stadium.JPG" />
 
-<h2>Inscription 2024/25</h2>
-
-<a href="#" class="custom-link-blanc">Rejoins l'équipe ici</a>
-
+    <!-- Inscription -->
+    <h2>Inscription 2024/25</h2>
+    <a href="#" class="custom-link-blanc">Rejoins l'équipe ici</a>
 
     <div class="img-top-footer">
       <a target="_blank" aria-label="Vicoria Concordia Crescit">
@@ -163,56 +117,10 @@
       </a>
     </div>
 
-    
+    <!-- Footer -->
+    <footer class="footer"></footer>
 
-    <!-- ////////////////////////////////////////////////////////////// -->
-
-    <footer class="footer">
-      <div class="footer-text">
-        <br />
-        <a href="#" class="custom-link-bleu">Nous contacter</a>
-        <br />
-        <br />
-
-        <a href="#" class="custom-link-bleu">Informations légales</a>
-      </div>
-
-      <div class="footer-icons">
-        <a href="https://www.x.com" target="_blank" aria-label="Aller sur X">
-          <img
-            src="assets/icons8-x-500.png"
-            alt="Twitter Icon"
-            width="100"
-            height="100"
-          />
-        </a>
-
-        <a
-          href="https://www.facebook.com"
-          target="_blank"
-          aria-label="Aller sur Facebook"
-        >
-          <img
-            src="assets/icons8-facebook-nouveau-500.png"
-            alt="Facebook Icon"
-            width="100"
-            height="100"
-          />
-        </a>
-
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          aria-label="Aller sur Instagram"
-        >
-          <img
-            src="assets/icons8-insta-500.png"
-            alt="Instagram Icon"
-            width="100"
-            height="100"
-          />
-        </a>
-      </div>
-    </footer>
+    <!-- Scripts -->
+    <script src="script.js"></script>
   </body>
 </html>
