@@ -1,3 +1,5 @@
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 const apiKey = "eb07dfa7f9525afbfb394e2a542680f4";
 const teamId = "42";
 const leagueId = "39";
@@ -157,3 +159,57 @@ function initializeMenu() {
     });
   }
 }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Configuration Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAyLJwseXraAd6RzZmtRYlGFBxkrLPv4PQ",
+  authDomain: "ascfr-refonte.firebaseapp.com",
+  projectId: "ascfr-refonte",
+  storageBucket: "ascfr-refonte.firebasestorage.app",
+  messagingSenderId: "192382773773",
+  appId: "your-app-id", // Si disponible
+};
+
+// Initialisation Firebase
+const app = firebase.initializeApp(firebaseConfig);
+
+// Initialisation Firestore
+const db = firebase.firestore();
+
+// Exemple : récupérer une collection
+db.collection("ma-collection")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} =>`, doc.data());
+    });
+  })
+  .catch((error) => {
+    console.error("Erreur lors de la récupération des documents :", error);
+  });
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Firebase
+console.log("Début du chargement des composants");
+
+loadComponent("header", "partials/header.html")
+  .then(() => console.log("Header chargé avec succès"))
+  .catch((error) => console.error("Erreur chargement header :", error));
+
+loadComponent("footer", "partials/footer.html")
+  .then(() => console.log("Footer chargé avec succès"))
+  .catch((error) => console.error("Erreur chargement footer :", error));
+
+db.collection("test")
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} =>`, doc.data());
+    });
+  })
+  .catch((error) => {
+    console.error("Erreur Firebase Firestore :", error);
+  });
